@@ -52,15 +52,13 @@ RUN wget https://downloads.tuxfamily.org/godotengine/3.3.4/Godot_v3.3.4-stable_l
     unzip Godot_v3.3.4-stable_linux_server.64.zip && \
     mv ./Godot_v3.3.4-stable_linux_server.64 /opt/godot-server
 
-ADD ./rsr-srv/server-test.pck .
+ADD ./rsr-srv/server.pck .
 ADD ./rsr-srv/Godot-engine .
-ADD ./rsr-clt/client.x86_64 .
-ADD ./rsr-clt/client.pck .
-ADD ./rsr-clt/. .
+
 
 EXPOSE 4321
 
-CMD [ "godot", "Godot-engine", "--main-pack", "server-test.pck" ]
+CMD [ "godot", "Godot-engine", "--main-pack", "server.pck" ]
 
 
 
